@@ -10,6 +10,11 @@ const passportJWT = require('passport-jwt');
 
 const HTTP_PORT = process.env.PORT || 8080;
 
+// Add a root route handler
+app.get("/", (req, res) => {
+    res.json({ message: "API Listening" });
+});
+
 // JWT Setup
 let ExtractJwt = passportJWT.ExtractJwt;
 let JwtStrategy = passportJWT.Strategy;
